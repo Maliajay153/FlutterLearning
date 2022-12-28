@@ -7,14 +7,14 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("First demo project"),
-      ),
+        title: Text("First demo project",style: TextStyle(color: Colors.cyanAccent)),
+    ),
       body: Center(
         child: Container(
-          child: Text("Helo india"),
+          child: Text("Helo india",style: TextStyle(color: Colors.amber)),
         ),
       ),
-      drawer: Drawer(),
+      drawer: Drawer()
     );
   }
 }
