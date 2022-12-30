@@ -4,6 +4,7 @@ import 'pages/HomePage.dart';
 
 void main() {
   runApp(MyApp());
+  HomePage homePage = new HomePage();
 }
 class  MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
