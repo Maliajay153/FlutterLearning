@@ -1,14 +1,19 @@
-import 'package:demoforme/main.dart';
-import 'package:demoforme/pages/HomePage.dart';
+
 import 'package:flutter/material.dart';
 
 
-class  Login_page extends StatelessWidget {
+class  Login_page extends StatefulWidget {
   const Login_page({Key? key}) : super(key: key);
 
   @override
+  State<Login_page> createState() => _Login_pageState();
+}
+
+class _Login_pageState extends State<Login_page> {
+  @override
+  String name = "";
   Widget build(BuildContext context) {
-    return MaterialApp(
+      return MaterialApp(
       home: Material(
         color: Colors.grey,
         child: SingleChildScrollView(
@@ -17,7 +22,7 @@ class  Login_page extends StatelessWidget {
               Image.asset("assets/Images/Login_image.png",fit: BoxFit.cover,),
 
               SizedBox( height : 12),
-              Text("Welcome guys",style: TextStyle(fontSize: 25)),
+              Text("Welcome $name",style: TextStyle(fontSize: 25)),
               SizedBox(height: 12,),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 20.0,horizontal: 32.0),
@@ -30,6 +35,10 @@ class  Login_page extends StatelessWidget {
                         "Enter Username",
                         style: TextStyle(fontSize: 20),
                       )),
+                      onChanged: (value) {
+                        name = value;
+                        setState(() {});
+                      },
                     ),
                     TextFormField(
                       obscureText: true,
