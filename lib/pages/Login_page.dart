@@ -12,8 +12,10 @@ class  Login_page extends StatefulWidget {
 class _Login_pageState extends State<Login_page> {
   @override
   String name = "";
+  bool changeButton = false;
   Widget build(BuildContext context) {
       return MaterialApp(
+        debugShowCheckedModeBanner: false,
       home: Material(
         color: Colors.grey,
         child: SingleChildScrollView(
@@ -29,7 +31,6 @@ class _Login_pageState extends State<Login_page> {
                 child: Column(
                   children : [
                     TextFormField(
-                      obscureText: true,
                       decoration: InputDecoration(
                           label: Text(
                         "Enter Username",
@@ -52,21 +53,39 @@ class _Login_pageState extends State<Login_page> {
                     ),
                     SizedBox(height: 15),
                     ElevatedButton(
-
+                      clipBehavior: Clip.hardEdge,
                       style: TextButton.styleFrom(
                           shape: RoundedRectangleBorder(side: BorderSide(style:BorderStyle.solid,color: Colors.deepPurple)),
                           minimumSize: Size(120, 45),backgroundColor: Colors.amber),
                         onPressed: () {
-                           // Navigator.pushNamed(context, "/HomePage");
                           Navigator.pushNamed(context, "/HomePage");
                         },
                       child: Text("Login",
                       style:TextStyle(color : Colors.deepPurple,fontSize: 20),)),
                     SizedBox(height: 15,),
-                    Container(height: 45,width: 200,color: Colors.deepPurple,
-                          child: Center(
-                              child: Text("Sigh Up",style: TextStyle(fontSize: 30),)),
-                    )
+                    InkWell(
+                      onTap: () async {
+                        setState(() {
+                          if(changeButton == true)
+                            changeButton = false;
+                          else
+                            changeButton = true;
+                        });
+                        await Future.delayed(Duration(seconds : 1));
+                        Navigator.pushNamed(context, "/HomePage");
+                      },
+
+                      child : AnimatedContainer(height: 45,width: 150,
+                              alignment: Alignment.center,
+                              child: Text("Sigh Up",style: TextStyle(fontSize: 30),),
+                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(6),
+                      color: changeButton? Colors.deepPurple:Colors.green,
+                        ), duration: Duration(seconds: 1),
+                      ),
+                    ),
+                    SizedBox(height: 100,),
+                    SizedBox(height: 100,
+                    child: Text("Have a nice day $name",style: TextStyle(fontSize:28,color: changeButton ?Colors.deepPurple:Colors.blue),),)
 
                    ],
                 ),

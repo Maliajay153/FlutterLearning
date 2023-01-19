@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
     ),
       body: Center(
         child: Container(
-          child: Text("Hello india",style: TextStyle(color: Colors.deepOrangeAccent)),
+          child: Text("HellO My dear users",style: TextStyle(color: Colors.deepOrangeAccent)),
         ),
       ),
 
@@ -34,6 +34,9 @@ class HomePage extends StatelessWidget {
               )
 
             ),
+            Container(height: 80,width: 350,color: Colors.green,
+            child: Text("hello everyone my name is mali ajay",style: TextStyle(fontSize: 16),),),
+            Container(height: 80,width: 350,color: Colors.red,)
           ],
         ),
 
