@@ -1,10 +1,11 @@
+import 'pages/Sign_upPage.dart';
 import 'package:flutter/material.dart';
 import 'pages/Login_page.dart';
 import 'pages/HomePage.dart';
 
 void main() {
   runApp(MyApp());
-  HomePage homePage = new HomePage();
+  // HomePage homePage = new HomePage();
 }
 class  MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -23,7 +24,8 @@ class  MyApp extends StatelessWidget {
       initialRoute: "/",
       routes: {
         "/" : (context) => Login_page(),
-        "/HomePage": (context )=> HomePage()
+        "/HomePage": (context ) => HomePage(),
+        "/Sign_upPage": (context) => Sign_upPage()
       },
 
       );

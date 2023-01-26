@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -8,7 +7,8 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("First demo project",style: TextStyle(color: Colors.greenAccent)),
+        title: Text("Taj Hotel",style: TextStyle(color: Colors.greenAccent)),
+        backgroundColor: Colors.purple,
     ),
       body: Center(
         child: Container(

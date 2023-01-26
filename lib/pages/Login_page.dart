@@ -72,7 +72,7 @@ class _Login_pageState extends State<Login_page> {
                             changeButton = true;
                         });
                         await Future.delayed(Duration(seconds : 1));
-                        Navigator.pushNamed(context, "/HomePage");
+                        Navigator.pushNamed(context, "/Sign_upPage");
                       },
 
                       child : AnimatedContainer(height: 45,width: 150,
