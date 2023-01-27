@@ -30,26 +30,33 @@ class _Login_pageState extends State<Login_page> {
                 padding: const EdgeInsets.symmetric(vertical: 20.0,horizontal: 32.0),
                 child: Column(
                   children : [
-                    TextFormField(
-                      decoration: InputDecoration(
-                          label: Text(
-                        "Enter Username",
-                        style: TextStyle(fontSize: 20),
-                      )),
-                      onChanged: (value) {
-                        name = value;
-                        setState(() {});
-                      },
-                    ),
-                    TextFormField(
-                      obscureText: true,
-                      decoration: InputDecoration(
-                          label: Text(
-                        "Enter password",
-                        style: TextStyle(
-                          fontSize: 20,
-                        ),
-                      )),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical:20,horizontal: 0),
+                      child: Column(
+                        children: [
+                          TextFormField(
+                            decoration: InputDecoration(
+                                label: Text(
+                              "Enter Username",
+                              style: TextStyle(fontSize: 20),
+                            )),
+                            onChanged: (value) {
+                              name = value;
+                              setState(() {});
+                            },
+                          ),
+                          TextFormField(
+                            obscureText: true,
+                            decoration: InputDecoration(
+                                label: Text(
+                              "Enter password",
+                              style: TextStyle(
+                                fontSize: 20,
+                              ),
+                            )),
+                          ),
+                        ],
+                      ),
                     ),
                     SizedBox(height: 15),
                     ElevatedButton(
@@ -61,7 +68,7 @@ class _Login_pageState extends State<Login_page> {
                           Navigator.pushNamed(context, "/HomePage");
                         },
                       child: Text("Login",
-                      style:TextStyle(color : Colors.deepPurple,fontSize: 20),)),
+                      style:TextStyle(color : Colors.deepPurple,fontSize: 28),)),
                     SizedBox(height: 15,),
                     InkWell(
                       onTap: () async {
@@ -71,16 +78,15 @@ class _Login_pageState extends State<Login_page> {
                           else
                             changeButton = true;
                         });
-                        await Future.delayed(Duration(seconds : 1));
+                        await Future.delayed(Duration(milliseconds: 400));
                         Navigator.pushNamed(context, "/Sign_upPage");
                       },
 
-                      child : AnimatedContainer(height: 45,width: 150,
-                              alignment: Alignment.center,
-                              child: Text("Sigh Up",style: TextStyle(fontSize: 30),),
+                      child : Ink(height: 45,width: 150,
+                              child: Center( child: Text("Register",style: TextStyle(fontSize: 28),),),
                       decoration: BoxDecoration(borderRadius: BorderRadius.circular(6),
                       color: changeButton? Colors.deepPurple:Colors.green,
-                        ), duration: Duration(seconds: 1),
+                        ),
                       ),
                     ),
                     SizedBox(height: 100,),
