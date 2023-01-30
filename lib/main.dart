@@ -1,3 +1,5 @@
+import 'package:demoforme/pages/ItemDes.dart';
+
 import 'pages/Sign_upPage.dart';
 import 'package:flutter/material.dart';
 import 'pages/Login_page.dart';
@@ -26,7 +28,8 @@ class  MyApp extends StatelessWidget {
         "/" : (context) => Login_page(),
         "/HomePage": (context ) => HomePage(),
         "/Login_page": (context) => Login_page(),
-        "/Sign_upPage": (context) => Sign_upPage()
+        "/Sign_upPage": (context) => Sign_upPage(),
+        "/ItemDes": (context) => ItemDes()
       },
 
       );
